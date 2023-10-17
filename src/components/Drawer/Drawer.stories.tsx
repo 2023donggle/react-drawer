@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Drawer, { Anchor } from './Drawer';
-import Flex from '../Flex/Flex';
 import { Fragment, useState } from 'react';
 
 const meta = {
@@ -15,7 +14,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
-  render: ({}) => {
+  render: () => {
     const [state, setState] = useState({
       top: false,
       left: false,
@@ -28,11 +27,11 @@ export const Playground: Story = {
     };
 
     const list = (anchor: Anchor) => (
-      <Flex direction="column">
+      <div style={{ flexDirection: 'column' }}>
         <button onClick={() => toggleDrawer(anchor, false)}>Woowacourse</button>
         <button onClick={() => toggleDrawer(anchor, false)}>Missions</button>
         <button onClick={() => toggleDrawer(anchor, false)}>Settings</button>
-      </Flex>
+      </div>
     );
 
     return (
