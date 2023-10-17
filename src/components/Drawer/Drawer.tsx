@@ -16,7 +16,7 @@ type Props = {
    * @default false
    */
   open: boolean;
-  size: string;
+  size?: string;
   /**
    * backdrop 클릭 시 실행할 핸들러
    *
@@ -54,12 +54,18 @@ const Backdrop = styled.div<Pick<Props, 'open'>>`
   padding: 0;
   margin: 0;
   background: rgba(0, 0, 0, 0.35);
+
+  /* 동글 z-index: 모달 9, 토스트 10 */
+  z-index: 5;
 `;
 
 const StyledDrawer = styled.div<Omit<Props, 'onClose'>>`
   position: fixed;
   transition: transform 300ms;
   background-color: white;
+
+  /* 동글 z-index: 모달 9, 토스트 10 */
+  z-index: 5;
 
   ${({ anchor, open, size }) => {
     const commonLeftAndRightStyles = css`
