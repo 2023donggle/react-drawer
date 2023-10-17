@@ -16,6 +16,7 @@ type Props = {
    * @default false
    */
   open: boolean;
+  size: string;
   /**
    * backdrop 클릭 시 실행할 핸들러
    *
@@ -24,11 +25,17 @@ type Props = {
   onClose: Function;
 };
 
-const Drawer = ({ children, anchor = 'left', open = false, onClose }: PropsWithChildren<Props>) => {
+const Drawer = ({
+  children,
+  anchor = 'left',
+  open = false,
+  size = '90%',
+  onClose,
+}: PropsWithChildren<Props>) => {
   return (
     <>
       {open && <Backdrop onClick={() => onClose()} open={open} />}
-      <StyledDrawer anchor={anchor} open={open}>
+      <StyledDrawer anchor={anchor} open={open} size={size}>
         {children}
       </StyledDrawer>
     </>
@@ -54,17 +61,17 @@ const StyledDrawer = styled.div<Omit<Props, 'onClose'>>`
   transition: transform 300ms;
   background-color: white;
 
-  ${({ anchor, open }) => {
+  ${({ anchor, open, size }) => {
     const commonLeftAndRightStyles = css`
       top: 0;
       height: 100vh;
-      width: 260px;
+      width: ${size};
     `;
 
     const commonUpAndBottomStyles = css`
       left: 0;
       right: 0;
-      height: 260px;
+      height: ${size};
       width: 100vw;
     `;
 
