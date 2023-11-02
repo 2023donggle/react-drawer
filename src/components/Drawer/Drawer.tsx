@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { MouseEventHandler, PropsWithChildren } from 'react';
 import styled, { css } from 'styled-components';
 
 export type Anchor = 'left' | 'right' | 'top' | 'bottom';
@@ -22,7 +22,7 @@ type Props = {
    *
    * @dafault undefined
    */
-  onClose: Function;
+  onClose: MouseEventHandler<HTMLDivElement>;
 };
 
 const Drawer = ({
@@ -34,7 +34,7 @@ const Drawer = ({
 }: PropsWithChildren<Props>) => {
   return (
     <>
-      {open && <Backdrop onClick={() => onClose()} open={open} />}
+      {open && <Backdrop onClick={onClose} open={open} />}
       <StyledDrawer anchor={anchor} open={open} size={size}>
         {children}
       </StyledDrawer>

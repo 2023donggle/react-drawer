@@ -1,5 +1,5 @@
 <h2 align="middle">동글의 레이아웃 컴포넌트</h2>
-<p align="middle">![우아한테크코스 5기 프로젝트 동글](https://donggle.blog)</p>
+<p align="middle">우아한테크코스 5기 프로젝트 <a href="https://donggle.blog">동글</a></p>
 <br/>
 
 # layout-component &middot; [![NPM Version](https://img.shields.io/npm/v/@donggle/layout-component)](https://www.npmjs.com/package/@donggle/layout-component) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yogjin/layout-component/blob/main/LICENSE)
