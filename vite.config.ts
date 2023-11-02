@@ -14,7 +14,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['src/stories/**', 'react', 'react-dom'],
+      external: ['src/stories/**', 'react', 'react-dom', 'styled-components'],
       output: {
         globals: {
           react: 'React',
